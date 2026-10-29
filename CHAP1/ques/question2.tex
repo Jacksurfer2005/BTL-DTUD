@@ -1,0 +1,147 @@
+\section{Câu 2}
+Cho mạch khuếch đại tín hiệu như hình vẽ. Các tụ $C_1$, $C_2$ có giá trị rất lớn. BJT có hệ số $\beta = 80$ và có mã là 2N2907
+
+\begin{figure}[h!]
+    \centering
+    \resizebox{0.7\textwidth}{!}{
+    \begin{tikzpicture}[transform shape, american voltages]
+        % Paths, nodes and wires:
+        \node[pnp, rotate=90] at (14, 6){};
+        \draw (8, 6) to[american resistor, l={$R_S=1k \Omega$}] (9.2, 6);
+        \draw (10, 6) to[capacitor, l={$C_{C1}$}] (11, 6);
+        \draw (12, 3) to[american voltage source, l_={$20V$}, v=$V_{EE}$] (12, 2);
+        \draw (16, 5.2) to[american resistor, mirror, l={$R_C=6.5k \Omega$}] (16, 3.8);
+        \draw (18, 6) to[capacitor, mirror, l_={$C_{C2}$}] (17, 6);
+        \draw (16, 2) to[american voltage source, l_={$25V$}, v=$V_{CC}$] (16, 3);
+        \draw (7, 4) to[american voltage source, l={$v_s$}] (7, 3);
+        \draw (7, 4) -| (7, 6) -- (8, 6);
+        \draw (9.2, 6) -- (10, 6);
+        \draw (11, 6) -- (13.23, 6);
+        \draw (14.77, 6) -- (17, 6);
+        \draw (19, 3.8) -| (19, 1) |- (7, 1) -| (7, 3);
+        \draw (12, 2) -| (12, 1);
+        \draw (16, 2) -| (16, 1);
+        \draw (14, 5.2) -| (14, 1);
+        \node[ground] at (14, 0.6){};
+        \draw (14, 1) -| (14, 0.6);
+        \draw (19, 6) -- (20, 6);
+        \draw (12, 5.2) to[american resistor, mirror, l_={$R_E =10k \Omega$}] (12, 3.8);
+        \draw (12, 5.2) -| (12, 6);
+        \draw (12, 3.8) -| (12, 3);
+        \draw (16, 3.8) -| (16, 3);
+        \draw (16, 5.2) -| (16, 6);
+        \draw (19, 5.2) to[american resistor, mirror, l={$R_L = 5k\Omega$}] (19, 3.8);
+        \draw (18, 6) -- (19, 6);
+        \draw (19, 5.2) -| (19, 6);
+        \node[circ] at (14, 1){};
+        \node[circ] at (16, 1){};
+        \node[circ] at (12, 1){};
+        \node[circ] at (12, 6){};
+        \node[circ] at (16, 6){};
+        \node[circ] at (19, 6){};
+        \node[ocirc](N1) at (20, 6){} node[anchor=west] at (N1.east){$v_o$};
+    \end{tikzpicture}%
+    }
+\end{figure}
+\textbf{a) Vẽ VTC của mạch (kiểm chứng sử dụng mô phỏng) và tìm điểm hoạt động $Q$ của BJT.}
+
+Theo DC mạch có dạng:
+\begin{figure}[h!]
+    \centering
+    \resizebox{0.25\textwidth}{!}{
+    \begin{tikzpicture}[transform shape]
+        % Paths, nodes and wires:
+        \node[pnp] at (7, 4.98){};
+        \draw (7, 4.21) to[american resistor, l={$R_C=6.5k\Omega$}, i>^=$I_C$] (7, 2);
+        \draw (7, 7.96) to[american resistor, l={$R_E=10k\Omega$}, i=$I_E$] (7, 5.75);
+        \node[ground] at (5, 4.5){};
+        \draw (6.16, 4.98) -| (5, 4.5);
+        \node[vcc](N1) at (7, 7.96){} node[anchor=south] at (N1.text){$V_{EE}=20V$};
+        \node[vee](N2) at (7, 2){} node[anchor=north] at (N2.text){$V_{CC}=-25V$};
+    \end{tikzpicture}%
+}
+\end{figure}
+
+Ta có:
+\begin{equation*}
+    I_E = \frac{V_{EE}-V_{EB}}{R_E} = \frac{20-0.7}{10k} = 1.93\ (mA)
+\end{equation*}
+\begin{equation*}
+    \Rightarrow I_C = \frac{\beta}{\beta+1}I_E = 1.9062\ (mA)
+\end{equation*}
+
+Áp dụng KVL cho nhánh từ $V_{EE}$ tới $V_{CC}$ có:
+\begin{equation*}
+    -V_{EE}+I_{E}R_{E}+I_{C}R_{C}+V_{EC}+V_{CC}=0
+\end{equation*}
+\begin{equation*}
+    \Rightarrow V_{EC} = V_{EE}-V_{CC} - I_{E}R_E - I_C R_C = 13.31\ (V)
+\end{equation*}
+
+Vậy điểm làm việc $Q$ là: $Q(I_{CQ},V_{ECQ}) = Q(1.9062\ mA,\ 13.31\ V)$
+\newpage
+\textbf{b) Đặt $v_{s} = V_{m} \sin \left( \omega t\right)$ vào mạch. Tìm $A_{vo}$, $G_v$, $R_i$, $R_o$ của mạch.}
+
+Mạch ở chế độ AC có dạng:
+\begin{figure}[h!]
+    \centering
+    \resizebox{0.7\textwidth}{!}{
+    \begin{tikzpicture}[transform shape]
+	% Paths, nodes and wires:
+	\node[pnp, rotate=90] at (9, 7){};
+	\draw (11, 6.21) to[american resistor, l={$R_C=6.5k\Omega$}] (11, 4.5);
+	\draw (6.5, 6.25) to[american resistor, l={$R_E=10k\Omega$}] (6.5, 4.5);
+	\draw (6, 7) to[american resistor, l_={$R_S=1k\Omega$}] (4.25, 7);
+	\node[oscillator](N1) at (3.49, 5.51){} node[anchor=west] at (N1.east){$v_s$};
+	\draw (3, 6) -| (3, 7) -- (4.25, 7);
+	\draw (6, 7) -- (8.23, 7);
+	\draw (6.5, 6.25) -| (6.5, 7);
+	\draw (9.77, 7) -- (11, 7) -| (11, 6.25);
+	\node[ground] at (3, 4){};
+	\node[ground] at (6.5, 4){};
+	\node[ground] at (9, 4){};
+	\node[ground] at (11, 4){};
+	\draw (3, 5) -| (3, 4);
+	\draw (6.5, 4.5) -| (6.5, 4);
+	\draw (9, 6.16) -| (9, 4);
+	\draw (11, 4.5) -| (11, 4);
+	\draw (11, 7) -- (14, 7);
+	\node[ocirc](N2) at (16, 7){} node[anchor=west] at (N2.east){$v_o$};
+	\node[circ] at (6.5, 7){};
+	\node[circ] at (11, 7){};
+	\draw (14, 6.25) to[american resistor, l={$R_L=5k\Omega$}] (14, 4.54);
+	\draw (14, 7) -| (14, 6.25);
+	\draw (14, 7) -- (16, 7);
+	\node[ground] at (14, 4){};
+	\draw (14, 4) -- (14, 4.54);
+	\node[circ] at (14, 7){};
+\end{tikzpicture}%
+}
+\end{figure}
+
+Ta lần lượt tìm các thông số:
+\begin{equation*}
+    r_{\pi} = \frac{V_T}{I_{BQ}}=\beta\times\frac{V_T}{I_{CQ}}\approx 1049\ (\Omega)
+\end{equation*}
+\begin{equation*}
+    \Rightarrow g_m = \frac{\beta}{r_\pi} = 76.2469\ (mA/V)
+\end{equation*}
+
+\begin{equation*}
+    R_{i} = \left. \frac{v_s}{i_i} \right|_{v_o=0} = \frac{1}{g_m}//R_E = 13.0981\ (\Omega)
+\end{equation*}
+\begin{equation*}
+    R_o = \left. \frac{v_o}{i_o} \right|_{i_i=0} = R_C = 6.5\ (k\Omega)
+\end{equation*}
+\begin{equation*}
+    A_{vo} = \left. \frac{v_o}{v_s} \right|_{R_L = \infty} = g_m R_C = 495.6049\ (V/V)
+\end{equation*}
+\begin{equation*}
+    A_{v} = A_{vo}\dfrac{R_L}{R_L + R_o} = 215.4804 (V/V)
+\end{equation*}
+\begin{equation*}
+    G_v = \frac{v_o}{v_s} = \frac{R_i}{R_i+R_S}A_v = \frac{R_i}{R_i+R_S}\times\frac{R_L}{R_L+R_o}\times A_{vo} = 2.7859\ (V/V)
+\end{equation*}
+
+
+\textbf{c) Lựa chọn các tụ $C_{1}$, $C_{2}$ để mạch có $f_{L}=100\,\textsf{Hz}$.}

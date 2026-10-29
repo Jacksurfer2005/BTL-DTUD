@@ -1,0 +1,34 @@
+\newcommand\coursename{ĐIỆN TỬ ỨNG DỤNG}
+\newcommand\name{Vũ Nhật Huy}
+
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={dtud},
+    %pdfpagemode=FullScreen,
+}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+\pagestyle{fancy}
+\fancyhead[r]{Nhật Huy}
+%\fancyhead[c]{\bfseries DSP}
+\fancyhead[l]{\textit{\coursename}}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\cfoot{Page \thepage}
+
+% Have reference labels be linked to section (section 3 will have fig. 3.1 etc.)
+\counterwithin{equation}{section} % For equations
+\counterwithin{figure}{section} % For figures
+\counterwithin{table}{section} % For tables

@@ -1,0 +1,92 @@
+\documentclass[11pt, a4paper]{article}
+\input{general/preamble} % Loads in the preamble 
+\input{general/settings} % Loads in user defined settings
+\definecolor{tableblue}{RGB} {0, 174, 239}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \vspace*{1in}
+
+    {\LARGE \bfseries \coursename}\\[1.5cm]
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.2\linewidth]{EE.png} $\quad$
+        \includegraphics[width=0.2\linewidth]{HCMUT.png}
+    \end{figure}
+    {\large \name}\\[0.5cm]
+    {\large Faculty of Electrical and Electronics Engineering}\\
+    {\large Department of Electronics Engineering}\\
+    {\large Ho Chi Minh City University of Technology}\\
+    {\large Contact: \href{mailto:huy.vunhat108@gmail.com}{\it huy.vunhat108@gmail.com}}\\[2cm]
+    
+    \vfill
+    {\large TP. Hồ Chí Minh - Ngày 26 tháng 8 năm 2026}
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+
+% \include{ques/question2}
+% \include{ques/question3}
+\include{ques/question4}
+% \include{ques/question5}
+% \include{ques/question6}
+% \include{ques/question7}
+% \include{ques/question8}
+% \include{ques/question9}
+% \include{ques/question10}
+
+
+% \textbf{Câu 3:}
+
+
+% \begin{figure}[h!]
+%     \centering
+%     \resizebox{0.7\textwidth}{!}{
+%     \begin{tikzpicture}[transform shape, american voltages]
+% 	% Paths, nodes and wires:
+% 	\draw (8, 6) to[american resistor, l={$R_S=1k \Omega$}] (9.2, 6);
+% 	\draw (10, 6) to[capacitor, l={$C_{C1}$}] (11, 6);
+% 	\draw (12, 5.2) to[american resistor, mirror, l_={$R_2=10k \Omega$}] (12, 3.8);
+% 	\draw (16, 4.6) to[capacitor, mirror, l_={$C_{C2}$}] (15, 4.6);
+% 	\draw (7, 4) to[sinusoidal voltage source, l={$v_s$}] (7, 3);
+% 	\draw (7, 4) -| (7, 6) -- (8, 6);
+% 	\draw (9.2, 6) -- (10, 6);
+% 	\draw (12, 8.2) to[american resistor, mirror, l_={$R_1 =10k \Omega$}] (12, 6.8);
+% 	\draw (14, 4.2) to[american resistor, mirror, l={$R_E = 500\Omega$}] (14, 2.8);
+% 	\node[ocirc](N1) at (18, 4.6){} node[anchor=west] at (N1.east){$v_o$};
+% 	\node[npn] at (14, 6){};
+% 	\draw (11, 6) -- (13.16, 6);
+% 	\draw (12, 6.8) -| (12, 6);
+% 	\draw (12, 6) -| (12, 5.2);
+% 	\draw (14, 5.23) -| (14, 4.2);
+% 	\draw (17, 4.2) to[american resistor, mirror, l={$R_L = 300\Omega$}] (17, 2.8);
+% 	\draw (12, 8.2) -| (12, 9) -- (14, 9) -| (14, 6.8);
+% 	\draw (12, 3.8) |- (14, 2) -| (14, 2.8);
+% 	\draw (14, 4.6) -- (15, 4.6);
+% 	\draw (16, 4.6) -- (18, 4.6);
+% 	\draw (17, 4.6) -| (17, 4.2);
+% 	\node[ground] at (17, 2){};
+% 	\node[ground] at (7, 2){};
+% 	\draw (14, 9.6) -| (14, 9);
+% 	\draw (14, 2) -| (14, 1.4);
+% 	\draw (17, 2) -| (17, 2.8);
+% 	\draw (7, 3) -| (7, 2);
+% 	\node[ocirc](N2) at (14, 9.6){} node[anchor=south] at (N2.north){$V^+ = +9V$};
+% 	\node[ocirc](N3) at (14, 1.4){} node[anchor=north] at (N3.south){$V^- = -9V$};
+% 	\node[circ] at (12, 6){};
+% 	\node[circ] at (14, 2){};
+% 	\node[circ] at (14, 9){};
+% 	\node[circ] at (14, 4.6){};
+% 	\node[circ] at (17, 4.6){};
+% \end{tikzpicture}%
+%     }
+% \end{figure}
+% \textbf{a) Vẽ VTC của mạch (kiểm chứng sử dụng mô phỏng) và tìm điểm hoạt động $Q$ của BJT.}
+
+% \textbf{b) Đặt $v_{s} = V_{m} \sin \left( \omega t\right)$ vào mạch. Tìm $A_{vo}$, $G_v$, $R_i$, $R_o$ của mạch.}
+
+% \textbf{c) Lựa chọn các tụ $C_{1}$, $C_{2}$ để mạch có $f_{L}=100\,\textsf{Hz}$.}
+\end{document}
