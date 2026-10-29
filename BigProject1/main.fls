@@ -1,6 +1,6 @@
-PWD d:\BACH KHOA\261\DTUD\BTL\BigProject1
+PWD d:\LATEX\BTL-DTUD\BigProject1
 INPUT C:\Users\ASUS\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\BACH KHOA\261\DTUD\BTL\BigProject1\main.tex
+INPUT d:\LATEX\BTL-DTUD\BigProject1\main.tex
 OUTPUT main.log
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
